@@ -1,0 +1,42 @@
+name: Build Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup PowerShell
+      uses: microsoft/setup-powershell@v1
+
+    - name: Install PS2EXE
+      shell: pwsh
+      run: |
+        Install-Module -Name ps2exe -Force -Scope CurrentUser
+        Import-Module ps2exe
+
+    - name: Build EXE
+      shell: pwsh
+      run: |
+        Invoke-PS2EXE `
+          -inputFile ".\DiskCleanupTool.ps1" `
+          -outputFile ".\DiskCleanupTool.exe" `
+          -noConsole `
+          -requireAdmin
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: DiskCleanupTool.exe
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
