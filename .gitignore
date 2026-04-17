@@ -1,32 +1,35 @@
-# User-specific files
-*.bak
-*.old
-*.tmp
-*.log
+# Build outputs
+*.exe
+*.dll
+*.pdb
 
 # Build artifacts
 build/
-dist/
-*.exe
-*.msi
+bin/
+obj/
 
 # IDE files
 .vscode/
 .idea/
-*.user
 *.suo
+*.user
 *.userosscache
+*.sln.docstates
 
-# Windows
+# Windows files
 Thumbs.db
-desktop.ini
+ehthumbs.db
+Desktop.ini
 $RECYCLE.BIN/
 
-# macOS
+# macOS files
 .DS_Store
 .AppleDouble
 .LSOverride
 
-# Linux
+# Linux files
 *~
-.directory
+
+# Project specific
+DiskCleanupTool.exe
+*.log

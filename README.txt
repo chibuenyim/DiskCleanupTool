@@ -1,105 +1,144 @@
-╔══════════════════════════════════════════════════════════════╗
-║                                                              ║
-║              🧹 DISK CLEANUP TOOL v5.0                      ║
-║              ========================                        ║
-║                                                              ║
-║              Free up to 45 GB of disk space!                ║
-║                                                              ║
-╚══════════════════════════════════════════════════════════════╝
-
+╔═══════════════════════════════════════════════════════════════╗
+║          Disk Cleanup & Windows Update Tool v1.0               ║
+╚═══════════════════════════════════════════════════════════════╝
 
 QUICK START
-════════════
+============
 
-1. Double-click START.bat
-2. Select what you want to clean
-3. Click "Start Cleanup"
-4. Wait for it to finish
-5. Enjoy your free space!
+Option 1: Double-click "DiskCleanupTool.bat"
+Option 2: Double-click "DiskCleanupTool.ps1"
+Option 3: Run "build_exe.ps1" to create a standalone EXE
 
+REQUIREMENTS
+============
 
-WHAT IT CLEANS
-═════════════
-
-✓ Temporary files          → 500 MB - 2 GB
-✓ Browser caches           → 300 MB - 1.5 GB
-✓ Developer caches         → 8-20 GB
-✓ Application caches       → 1-5 GB
-✓ System files             → 3-12 GB
-✓ Windows.old              → 10-30 GB
-✓ Windows Update           → 3-9 GB
-
-Total: 25-45 GB of space freed!
+- Windows 10/11
+- Administrator privileges
+- PowerShell 5.1+
 
 
-IS IT SAFE?
-══════════
+FEATURES
+========
 
-YES! It only cleans:
-  • Temporary files
-  • Cache files
-  • Old updates
-  • System junk
+This tool will help you free up disk space by cleaning:
 
-It NEVER deletes:
-  • Your documents
-  • Your photos/videos
-  • Your programs
-  • Your settings
+  ✓ Windows temporary files
+  ✓ Browser caches (Chrome, Edge)
+  ✓ Developer caches (npm, pip, Composer, yarn)
+  ✓ Windows update residues (saves 2-6 GB!)
+  ✓ Optional: Disable Windows Update
+  ✓ Optional: Clean CapCut data
 
-
-PRESETS
-═══════
-
-⚡ Quick Cleanup    → 1-2 GB in 5 minutes
-🔧 Standard Cleanup → 5-10 GB in 15 minutes
-💪 Deep Cleanup     → 20-35 GB in 30 minutes
+All with an easy-to-use graphical interface!
 
 
-TIPS
-════
+USAGE
+=====
 
-• First time? Use Quick Cleanup
-• Need more space? Use Deep Cleanup
-• Run monthly for best results
-• Safe to run anytime
+1. Double-click "DiskCleanupTool.bat"
+2. Click "Yes" when prompted for Administrator access
+3. Select the cleanup options you want
+4. Click "Start Cleanup"
+5. Wait for completion (may take 10-30 minutes for DISM)
+
+
+HOW TO CREATE AN EXE FILE
+==========================
+
+If you want a standalone .exe file:
+
+1. Right-click "build_exe.ps1"
+2. Select "Run with PowerShell"
+3. The script will automatically install PS2EXE and build DiskCleanupTool.exe
+
+OR run manually in PowerShell (Admin):
+
+  cd "C:\Users\chibu\DiskCleanupTool"
+  .\build_exe.ps1
+
+The resulting EXE can be copied to any Windows computer!
+
+
+PORTABLE
+========
+
+This tool is completely portable! Copy the entire folder to:
+
+- USB drive
+- Network share
+- Another computer
+
+And run it anywhere!
+
+
+SAFETY
+======
+
+- Only cleans temporary files and caches
+- Does NOT delete your documents, pictures, or personal files
+- Developer caches will be regenerated when needed
+- Windows Update residues are safe to remove
+
+
+DISABLING WINDOWS UPDATE
+=========================
+
+If you choose to disable Windows Update:
+
+- Windows will no longer download or install updates
+- Your system will NOT receive security patches
+- Use with caution - recommended for offline/air-gapped systems only
+
+To re-enable (if needed):
+
+1. Open PowerShell (Admin)
+2. Run: net start wuauserv
+3. Run: net start UsoSvc
+4. Delete the "# Windows Update blocked" section from:
+   C:\Windows\System32\drivers\etc\hosts
 
 
 TROUBLESHOOTING
-═══════════════
+===============
 
-Tool won't start?
-  → Right-click START.bat
-  → Select "Run as Administrator"
+Q: "Running scripts is disabled on this system"
+A: Run: Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 
-Want to preview first?
-  → Check "Dry Run" box
-  → See what would be cleaned
+Q: GUI doesn't appear
+A: Make sure .NET Framework 4.5+ is installed
+
+Q: "Access denied" errors
+A: Make sure to run as Administrator
 
 
-EXPECTED RESULTS
-═══════════════
+FILES INCLUDED
+==============
 
-Before:  5 GB free
-After:   30 GB free
-Freed:   25 GB
+DiskCleanupTool.ps1  - Main PowerShell script with GUI
+DiskCleanupTool.bat  - Batch file launcher
+build_exe.ps1        - Script to create standalone EXE
+README.txt           - This file
+
+
+VERSION HISTORY
+===============
+
+v1.0.0 - Initial release
+  - GUI interface
+  - Multiple cleanup options
+  - Windows Update disable functionality
+  - DISM integration for WinSxS cleanup
 
 
 SUPPORT
-═══════
+=======
 
-Website: https://github.com/chibuenyim/DiskCleanupTool
-Issues:  https://github.com/chibuenyim/DiskCleanupTool/issues
-
-
-VERSION 5.0.0
-═════════════
-
-✓ Cleaner interface
-✓ Faster cleanup
-✓ Better progress tracking
-✓ More safety features
-✓ Easier than ever
+Created with Claude Code
+For issues or questions, refer to the build instructions.
 
 
-Thank you for using Disk Cleanup Tool! 🎉
+LICENSE
+=======
+
+Free to use and modify.
+Use at your own risk. Always backup important data.
