@@ -1,8 +1,8 @@
 # 🧹 Disk Cleanup & Windows Update Tool
 
-**A comprehensive Windows disk cleanup utility with a graphical interface. Frees up 15+ GB of disk space by cleaning temporary files, caches, and Windows update residues.**
+**A comprehensive Windows disk cleanup utility with advanced features and a graphical interface. Frees up 20+ GB of disk space by cleaning temporary files, caches, system files, and Windows update residues.**
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Version](https://img.shields.io/badge/version-4.0.0-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![PowerShell](https://img.shields.io/badge/PowerShell-5.1%2B-blue.svg)
@@ -11,9 +11,17 @@
 
 ## ✨ Features
 
-- 🖥️ **Graphical Interface** - Easy-to-use GUI with checkboxes
-- 🗑️ **Cleans 15+ GB** of junk files and caches
+- 🖥️ **Graphical Interface** - Modern GUI with real-time progress tracking
+- 🗑️ **Cleans 20+ GB** of junk files and caches
+- 🔍 **Scan Only Mode** - Preview what would be cleaned without making changes
+- 🧪 **Dry Run Mode** - Safe preview of all cleanup operations
+- 💾 **System Restore** - Optional restore point creation before cleanup
+- 📊 **Detailed Logging** - Comprehensive logs with rotation
+- ⏰ **Scheduled Cleanup** - Set up automatic weekly cleanup
+- 📁 **Windows.old Removal** - Clean up previous Windows installations (10-30 GB)
+- 💤 **Hibernation Removal** - Remove hibernation file to free 2-8 GB
 - 🚫 **Disable Windows Update** - Optional Windows Update disable
+- 📤 **Export/Import Settings** - Save and restore your preferences
 - 📦 **Portable** - No installation required
 - 🔒 **Safe** - Only removes temporary files and caches
 - ⚡ **Fast** - Cleans multiple locations efficiently
